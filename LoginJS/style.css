@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box; /* inclui padding e borda no tamanho total do elemento */
+    margin: 0; /* remove margem padrão do navegador */
+    padding: 0; /* remove espaçamento interno padrão do navegador */
+}
+
+body {
+    background-color: #f0f4f8; /* cor de fundo cinza azulado claro */
+    font-family: Arial, sans-serif; /* define a fonte padrão da página */
+    min-height: 100vh; /* garante que o body ocupe pelo menos a altura total da tela */
+    display: flex; /* ativa o layout flexbox */
+    align-items: center; /* centraliza verticalmente o conteúdo */
+    justify-content: center; /* centraliza horizontalmente o conteúdo */
+}
+
+.login-card {
+    background-color: white; /* fundo branco do card */
+    border-radius: 16px; /* arredonda os cantos do card */
+    padding: 48px 40px; /* espaçamento interno: 48px em cima/baixo, 40px nas laterais */
+    width: 100%; /* ocupa toda a largura disponível */
+    max-width: 400px; /* limita a largura máxima a 400px */
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08); /* sombra suave abaixo do card */
+}
+
+.login-card h1 {
+    color: #1896da; /* cor azul do título */
+    font-size: 32px; /* tamanho da fonte do título */
+    font-weight: bold; /* deixa o título em negrito */
+    text-align: center; /* centraliza o texto */
+    margin-bottom: 8px; /* espaço abaixo do título */
+}
+
+.login-card p.subtitle {
+    color: #888; /* cor cinza do subtítulo */
+    font-size: 14px; /* tamanho menor da fonte */
+    margin-bottom: 32px; /* espaço abaixo do subtítulo antes dos campos */
+}
+
+.field {
+    margin-bottom: 20px; /* espaço entre cada campo do formulário */
+}
+
+.field label {
+    display: block; /* faz o label ocupar linha própria */
+    font-size: 14px;
+    font-weight: bold;
+    color: #1270a8; /* cor azul escuro do label */
+    margin-bottom: 6px; /* espaço entre o label e o input */
+}
+
+.field input {
+    width: 100%;
+    padding: 12px 14px; /* espaçamento interno do input */
+    border: 1px solid #ccc; /* borda cinza fina ao redor do input */
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333; /* cor do texto digitado */
+    transition: border-color 0.2s; /* anima a mudança de cor da borda suavemente */
+}
+
+.field input:focus {
+    outline: none; /* remove o contorno padrão do navegador ao focar */
+    border-color: #1896da; /* muda a borda para azul quando o input está ativo */
+}
+
+#mensagem.erro {
+    color: #e05; /* cor vermelha para mensagem de erro */
+}
+
+#mensagem.sucesso {
+    color: #28a745; /* cor verde para mensagem de sucesso */
+}
+
+.btn-login {
+    width: 100%;
+    padding: 13px; /* espaçamento interno do botão */
+    background-color: #1896da; /* cor de fundo azul do botão */
+    color: white; /* cor do texto do botão */
+    font-size: 16px;
+    font-weight: bold;
+    border: none; /* remove a borda padrão do botão */
+    border-radius: 8px;
+    cursor: pointer; /* muda o cursor para mão ao passar sobre o botão */
+    transition: background-color 0.2s; /* anima a mudança de cor ao passar o mouse */
+}
+
+.btn-login:hover {
+    background-color: #1270a8; /* escurece o azul ao passar o mouse */
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        margin: 20px; /* adiciona margem lateral em telas pequenas */
+        padding: 36px 24px; /* reduz o padding interno em telas pequenas */
+    }
+}

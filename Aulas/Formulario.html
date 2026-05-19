@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Formulários em Html</h1>
+    <h3>Preencha os dados do Formulário</h3>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <label for="name">Nome Completo: </label>
+            <input type="text" id="nome" name="nome" required><br><br>
+
+            <label for="genero">Genêro: </label>
+            <select name="genero" id="genero">
+            <option value="">Selecione: </option>
+            <option value="F">Feminino </option>
+            <option value="M">Masculino </option>
+            </select><br><br>
+
+            <label for="email">E-mail: </label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="endereco">Endereço: </label>
+            <input type="text" id="endereco" name="endereco" required><br><br>
+
+             <label for="estado">Estado: </label>
+            <select name="estado" id="estado">
+            <option value="">Selecione: </option>
+            <option value="F">Minas Gerais </option>
+            <option value="M">Outro </option>
+            </select><br><br>
+    
+
+            <label for="cidade">Cidade: </label>
+            <input type="text" id="cidade" name="cidade" required><br><br>
+
+            <label for="numero">Número: </label>
+            <input type="number" id="numero" name="numer" required><br><br>
+
+            <label for="idade">Idade: : </label>
+            <input type="number" name="email" min="1" max="120"><br><br>
+
+            <label for="mensagem">Mensagem: </label>
+            <textarea name="email" required></textarea><br><br>
+
+            <button type="submit">Enviar</button>
+        </fieldset>
+        <fieldset>
+            <legend>Preferências</legend>
+            <label for="front">Front-End</label>
+            <input type="checkbox" id="front" name="front" value="frontend">
+            <label for="back">Back-End</label>
+            <input type="checkbox" id="back" name="back" value="backend">
+            <label for="full">Full-Stack</label>
+            <input type="checkbox" id="full" name="full" value="fullstack">
+            <p>Gostaria de receber informações por e-mail?</p>
+            <label for="sim">SIM</label>
+            <input type="radio" id="sim" name="sim" value="sim">
+            <label for="nao">NÃO</label>
+            <input type="radio" id="nao" name="nao" value="nao">
+        </fieldset>
+
+        <fieldset>
+            <legend>Mensagem</legend>
+            <label for="mensagem">Mensagem Final</label>
+            <textarea id="mensagem" name="mensagem" rows="5" cols="40" placeholder="Digite Aqui..."></textarea><br><br>
+        </fieldset><br>
+        <input type="submit" value="Finalizar Inscrição">
+        <input type="reset" value="Limpar Formulário">
+        <button type="submit">Enviar</button>
+     </form>    
+</body>
+</html>

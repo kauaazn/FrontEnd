@@ -1,0 +1,182 @@
+/* =============================================
+   dashboard.css — Estilos da página Dashboard de Prioridades
+   ============================================= */
+
+/* --- BODY: configurações base da página --- */
+body {
+    background-color: #f5f5f5; /* fundo cinza muito claro */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin: 0;  /* remove espaço padrão do navegador ao redor da página */
+    padding: 0;
+    display: flex;          /* ativa Flexbox no body */
+    flex-direction: column; /* empilha header, nav, main e footer verticalmente */
+    min-height: 100vh;      /* body ocupa pelo menos 100% da altura da tela */
+}
+
+/* --- HEADER: faixa azul no topo da página --- */
+header {
+    background-color: #1896da; /* azul */
+    text-align: center;
+    padding: 20px 0 15px 0; /* cima=20px, lados=0, baixo=15px */
+}
+
+/* --- H1 DENTRO DO HEADER --- */
+header h1 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px; /* será sobrescrito pela regra abaixo */
+    margin-top: 0;       /* será sobrescrito pela regra abaixo */
+    margin: 0;           /* zera todas as margens (sobrescreve as duas linhas acima) */
+    line-height: 1.2;    /* espaço entre linhas = 1.2 vezes o tamanho da fonte */
+}
+
+/* --- NAV: barra de navegação com links das páginas --- */
+nav {
+    background-color: #1270a8; /* azul mais escuro que o header */
+    padding: 10px;
+    text-align: center;
+}
+
+/* --- NAV UL: container Flexbox dos links --- */
+nav ul {
+    list-style: none; /* remove marcadores padrão da lista */
+    margin: 0;
+    padding: 0;
+    display: flex;            /* coloca os links lado a lado */
+    justify-content: center;  /* centraliza os links horizontalmente */
+    align-items: center;      /* alinha os links ao centro verticalmente */
+    gap: 10px;                /* espaço de 10px entre cada link */
+}
+
+/* --- NAV A: links de navegação --- */
+nav a {
+    color: white;
+    text-decoration: none; /* remove sublinhado padrão dos links */
+    padding: 5px 15px;     /* área clicável maior (5px vertical, 15px horizontal) */
+    font-size: 15px;
+}
+
+/* --- MAIN: área central com o formulário --- */
+main {
+    max-width: 800px; /* largura máxima do conteúdo */
+    width: 90%;       /* 90% em telas menores que 800px */
+    margin: 30px auto; /* 30px de espaço vertical + centralização horizontal com auto */
+    flex: 1;           /* cresce para ocupar espaço entre nav e footer (empurra footer para baixo) */
+}
+
+/* --- FORM: caixa branca que envolve os fieldsets --- */
+form {
+    background-color: white;
+    border: 1px solid #ddd;  /* borda cinza clara */
+    border-radius: 10px;     /* bordas arredondadas */
+    padding: 40px;
+    box-sizing: border-box;  /* padding incluído na largura total */
+}
+
+/* --- FORM BR: esconde os <br> de dentro do form --- */
+form br {
+    display: none;
+    /* os <br> existem no HTML mas aqui são ocultados porque o CSS já gerencia o espaçamento
+       via margin-bottom nos fieldsets */
+}
+
+/* --- FIELDSET: agrupamento de campos com borda --- */
+fieldset {
+    border: 1px solid #1896da; /* borda azul (diferente do form que é cinza) */
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px; /* espaço entre os dois fieldsets */
+    background-color: #fdfdfd; /* quase branco (levemente diferente do fundo do form) */
+}
+
+/* --- LEGEND: título do fieldset --- */
+legend {
+    color: #1896da;
+    font-weight: bold;
+    padding: 0 10px;  /* espaço lateral para que a borda não fique colada no texto */
+    font-size: 16px;
+}
+
+/* --- ARTICLE: card de cada tarefa ou disciplina --- */
+article {
+    border-bottom: 1px solid #eee; /* linha cinza clara separando os cards */
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+/* --- ARTICLE P: nome da tarefa/disciplina --- */
+article p {
+    margin: 0 0 10px 0; /* sem margem acima, 10px abaixo */
+    font-weight: bold;
+    color: #1270a8;     /* azul escuro para destaque */
+    font-size: 18px;    /* levemente maior que o texto normal */
+}
+
+/* --- LABEL: rótulo "Status:" ou "Concluido:" --- */
+label {
+    display: block;      /* label ocupa a linha inteira (select fica abaixo) */
+    margin-bottom: 8px;
+    font-size: 14px;     /* menor que o padrão para hierarquia visual */
+}
+
+/* --- SELECT: dropdown de status / porcentagem --- */
+select {
+    width: 100%;          /* ocupa toda a largura do article */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* --- BUTTON: estilo base dos botões de ação --- */
+button {
+    padding: 12px 25px; /* 12px vertical, 25px horizontal */
+    font-size: 16px;
+    cursor: pointer;    /* cursor de mão = indica clicabilidade */
+    border: 1px solid #1896da;
+    border-radius: 10px;
+    margin-right: 10px; /* espaço entre os botões (Enviar e Limpar) */
+}
+
+/* --- BUTTON[type="submit"]: botão Enviar (ação principal) --- */
+button[type="submit"] {
+    background-color: #1896da; /* fundo azul */
+    color: white;
+}
+
+/* --- BUTTON[type="reset"]: botão Limpar (ação secundária) --- */
+button[type="reset"] {
+    background-color: white;
+    color: #1896da;
+}
+
+/* --- FOOTER: rodapé escuro no final da página --- */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 13px;         /* texto menor no rodapé é padrão de design */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- EFEITO HOVER NO NAV: sublinha o link ao passar o mouse --- */
+nav a:hover {
+    /* :hover é uma pseudo-classe — aplica estilo quando o mouse está sobre o elemento */
+    text-decoration: underline;
+}
+
+/* --- MEDIA QUERY: adaptações para telas pequenas (celulares até 600px) --- */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* links empilhados verticalmente no celular */
+    }
+
+    button {
+        width: 100%;        /* botão ocupa toda a largura (mais fácil de tocar) */
+        margin-bottom: 10px; /* espaço entre os botões empilhados */
+    }
+}

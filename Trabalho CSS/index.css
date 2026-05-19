@@ -1,0 +1,117 @@
+/* =============================================
+   index.css — Estilos da página de Login
+   ============================================= */
+
+/* --- BODY: configurações gerais da página --- */
+body {
+    background-color: #f5f5f5; /* cor de fundo cinza bem claro */
+    font-family: Arial, sans-serif; /* fonte sem serifa para melhor legibilidade */
+    font-size: 16px;  /* tamanho base de texto (outros elementos herdam este valor) */
+    color: #333;      /* cor do texto: cinza escuro (mais suave que preto puro) */
+    margin: 0;        /* remove a margem padrão do navegador ao redor da página */
+    padding: 0;       /* remove o espaçamento interno padrão */
+    display: flex;           /* ativa o Flexbox no body */
+    flex-direction: column;  /* empilha os filhos (header, main, footer) verticalmente */
+    min-height: 100vh;       /* body ocupa no mínimo 100% da altura da tela (viewport height) */
+}
+
+/* --- MAIN: container central do formulário --- */
+main {
+    max-width: 600px; /* largura máxima de 600px (não estica mais que isso em telas grandes) */
+    width: 90%;       /* largura de 90% do body (mantém margens nas laterais) */
+    margin: 0 auto;   /* auto nas laterais centraliza o elemento horizontalmente */
+    flex: 1;          /* faz o main crescer e ocupar todo o espaço disponível entre header e footer */
+    display: flex;          /* ativa Flexbox dentro do main */
+    flex-direction: column; /* empilha os filhos verticalmente */
+    justify-content: center; /* centraliza o conteúdo no eixo vertical */
+}
+
+/* --- LABELS dentro do main: rótulos dos campos --- */
+main label {
+    margin: 0 0 10px 0;  /* margem inferior de 10px (ordem: cima direita baixo esquerda) */
+    font-weight: bold;   /* texto em negrito */
+    color: #1270a8;      /* azul escuro */
+    font-size: 15px;     /* levemente menor que o padrão do body */
+}
+
+/* --- H1: título principal LOGIN --- */
+h1 {
+    color: #1896da;       /* azul mais claro que o usado no nav */
+    text-align: center;   /* centraliza o texto */
+    margin-bottom: 20px;  /* espaço abaixo do título */
+    font-size: 50px;      /* título grande e destacado */
+    padding: 30px;        /* espaçamento interno ao redor do texto */
+    font-weight: bold;    /* negrito */
+    font-family: Arial, Helvetica, sans-serif; /* pilha de fontes: tenta Arial, depois Helvetica */
+}
+
+/* --- FORM: caixa do formulário --- */
+form {
+    background-color: white; /* fundo branco para o card do formulário */
+    border: 1px solid #ddd;  /* borda cinza clara de 1px */
+    border-radius: 10px;     /* cantos arredondados (10px de raio) */
+    padding: 40px;           /* espaçamento interno de 40px em todos os lados */
+    box-sizing: border-box;  /* padding é incluído na largura total (não ultrapassa o max-width) */
+}
+
+/* --- LABEL geral: rótulo de cada campo do form --- */
+label {
+    display: block;       /* cada label ocupa uma linha inteira (comportamento de bloco) */
+    margin-top: 20px;     /* espaço acima do label para separar campos */
+    margin-bottom: 8px;   /* espaço entre o label e o input correspondente */
+    font-size: 16px;
+    text-align: left;     /* texto alinhado à esquerda mesmo com o main centralizado */
+}
+
+/* --- INPUT e SELECT: campos de entrada de dados --- */
+input, select {
+    width: 100%;         /* ocupa toda a largura do container (form) */
+    padding: 12px;       /* espaçamento interno para o campo não ficar apertado */
+    border: 1px solid #ccc; /* borda cinza */
+    border-radius: 8px;  /* cantos levemente arredondados */
+    font-size: 16px;     /* tamanho da fonte igual ao do label */
+    box-sizing: border-box; /* padding não soma à largura (evita ultrapassar o container) */
+}
+
+/* --- BUTTON: estilo base para ambos os botões --- */
+button {
+    padding: 12px;        /* espaçamento interno */
+    font-size: 16px;
+    cursor: pointer;      /* cursor de mãozinha ao passar o mouse (indica que é clicável) */
+    border: 1px solid #1896da; /* borda azul */
+    border-radius: 10px;  /* cantos arredondados */
+    margin-top: 30px;     /* espaço acima dos botões */
+    width: calc(50% - 10px); /* cada botão ocupa metade do form menos 10px de gap entre eles */
+}
+
+/* --- BUTTON[type="submit"]: botão Entrar --- */
+button[type="submit"] {
+    background-color: #1896da; /* fundo azul (botão principal) */
+    color: white;              /* texto branco sobre fundo azul */
+}
+
+/* --- BUTTON[type="reset"]: botão Limpar --- */
+button[type="reset"] {
+    background-color: white; /* fundo branco (botão secundário) */
+    color: #1896da;          /* texto azul */
+}
+
+/* --- FOOTER: rodapé da página --- */
+footer {
+    width: 100%;             /* ocupa toda a largura da tela */
+    background-color: #333;  /* fundo cinza escuro */
+    color: white;            /* texto branco */
+    text-align: center;
+    font-size: 13px;         /* texto menor no rodapé */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- MEDIA QUERY: adaptação para telas pequenas (até 500px) --- */
+@media (max-width: 500px) {
+    /* @media aplica estilos condicionalmente baseado no tamanho da tela */
+    button {
+        width: 100%;    /* botões ocupam a largura toda (empilhados, não lado a lado) */
+        margin-top: 10px;
+    }
+}

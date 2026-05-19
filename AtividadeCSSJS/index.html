@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma de Estudos</title>
+  <!-- conecta o arquivo de estilos CSS à página HTML -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- cabeçalho do site com marca, navegação e controles de carrinho/desconto -->
+  <header class="cabecalho-site">
+    <div class="marca">
+      <span class="logotipo">Estudo+</span>
+      <p>Plataforma de Cursos</p>
+    </div>
+
+    <nav class="nav-site">
+      <!-- links que navegando para seções internas da mesma página -->
+      <a href="#cursos">Cursos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="acoes-cabecalho">
+      <!-- contador que mostra quantos cursos foram adicionados ao carrinho -->
+      <span id="contadorCarrinho">Carrinho: 0</span>
+      <!-- botão que ativa ou desativa o desconto nos cursos -->
+      <button id="botaoDesconto" type="button">Ativar desconto</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- seção de destaque com mensagem principal e cartão de promoção -->
+    <section class="destaque">
+      <div>
+        <span class="rotulo-destaque">Nova coleção</span>
+        <h1>Descubra cursos práticos e completos</h1>
+        <p>Aprenda novas habilidades com uma página organizada, responsiva e fácil de usar.</p>
+      </div>
+      <div class="cartao-destaque">
+        <h2>Economize mais</h2>
+        <p>Ao ativar o desconto, todos os cursos recebem 20% de redução no preço.</p>
+      </div>
+    </section>
+
+    <!-- seção de cursos em destaque com vários cards de produto -->
+    <section id="cursos" class="secao-cursos">
+      <h2>Cursos em destaque</h2>
+      <div class="grade-cursos">
+        <article class="cartao-curso" data-preco="129">
+          <!-- imagem do curso -->
+          <img src="imgjs.jpg" alt="Curso de JavaScript">
+          <div class="corpo-cartao-curso">
+            <h3>JavaScript Moderno</h3>
+            <p class="instrutor">Por Ana Souza</p>
+            <div class="meta-curso">
+              <span>★ 4.8</span>
+              <span>32h</span>
+            </div>
+            <!-- preço exibido no cartão, atualizado pelo JavaScript quando o desconto é ativado -->
+            <p class="preco">R$ 129,00</p>
+            <!-- botão que adiciona este curso ao carrinho -->
+            <button type="button" class="botao-carrinho" data-curso="JavaScript Moderno">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <article class="cartao-curso" data-preco="99">
+          <img src="imgcss.jpg" alt="Curso de CSS Avançado">
+          <div class="corpo-cartao-curso">
+            <h3>CSS Avançado</h3>
+            <p class="instrutor">Por Bruno Lima</p>
+            <div class="meta-curso">
+              <span>★ 4.7</span>
+              <span>24h</span>
+            </div>
+            <p class="preco">R$ 99,00</p>
+            <button type="button" class="botao-carrinho" data-curso="CSS Avançado">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <article class="cartao-curso" data-preco="149">
+          <img src="imgdesign.png" alt="Curso de Design de Interface">
+          <div class="corpo-cartao-curso">
+            <h3>Design de Interfaces</h3>
+            <p class="instrutor">Por Carla Mendes</p>
+            <div class="meta-curso">
+              <span>★ 4.9</span>
+              <span>28h</span>
+            </div>
+            <p class="preco">R$ 149,00</p>
+            <button type="button" class="botao-carrinho" data-curso="Design de Interfaces">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <article class="cartao-curso cartao-produtividade" data-preco="79">
+          <img src="imgprodutividade.jfif" alt="Curso de Produtividade">
+          <div class="corpo-cartao-curso">
+            <h3>Produtividade Pessoal</h3>
+            <p class="instrutor">Por Diego Ferreira</p>
+            <div class="meta-curso">
+              <span>★ 4.6</span>
+              <span>18h</span>
+            </div>
+            <p class="preco">R$ 79,00</p>
+            <button type="button" class="botao-carrinho" data-curso="Produtividade Pessoal">Adicionar ao carrinho</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- seção sobre e contato do site -->
+    <section id="sobre" class="secao-info">
+      <article>
+        <h2>Por que estudar aqui?</h2>
+        <p>Esta vitrine oferece cursos organizados por temas, com informações claras e um visual simples para usar no desktop e no celular.</p>
+      </article>
+      <article id="contato">
+        <h2>Contato</h2>
+        <p>Envie suas dúvidas e comece a aprender com um carrinho que faz a contagem de cursos adicionados.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="rodape-site">
+    <p>© 2026 Plataforma de Estudos. Aprenda com quem entende.</p>
+  </footer>
+
+  <!-- área usada para exibir mensagens temporárias ao usuário -->
+  <div id="retorno" class="retorno" aria-live="polite"></div>
+  <!-- importa o script JavaScript que controla o carrinho e o desconto -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- DOCTYPE declara que este é um documento HTML5 -->
+
+<html lang="pt-br">
+<!-- lang="pt-br" define o idioma como Português do Brasil -->
+
+<head>
+    <!-- HEAD: metadados que o navegador usa, mas o usuário não vê diretamente -->
+
+    <meta charset="UTF-8">
+    <!-- UTF-8 permite acentos e caracteres especiais -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport torna a página responsiva para dispositivos móveis -->
+
+    <title>Dashboard Semântico</title>
+    <!-- título exibido na aba do navegador -->
+
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- vincula o arquivo CSS externo para estilizar esta página -->
+</head>
+
+<body>
+    <!-- BODY: todo o conteúdo visível ao usuário -->
+
+    <header>
+        <!-- header = cabeçalho semântico (identifica o topo da página) -->
+        <h1>Dashboard de Prioridades</h1>
+        <!-- h1 = título principal, maior destaque visual -->
+    </header>
+
+    <nav>
+        <!-- nav = área de navegação; contém os links para as outras páginas -->
+        <ul>
+            <!-- ul = lista não ordenada, usada como container dos links -->
+            <a href="index.html">Login</a>
+            <!-- a (anchor) = link; href define a página de destino -->
+            <a href="inicial.html">Início</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="pomodoro.html">Pomodoro</a>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- main = conteúdo principal e único da página -->
+
+        <form>
+            <!-- form = formulário para coletar dados do usuário -->
+
+            <!-- ==================== FIELDSET 1: TAREFAS DE HOJE ==================== -->
+            <fieldset>
+                <!-- fieldset agrupa campos relacionados visualmente com uma borda -->
+
+                <legend>TAREFAS DE HOJE</legend>
+                <!-- legend é o título do fieldset (aparece dentro da borda do fieldset) -->
+
+                <article>
+                    <!-- article = conteúdo independente com sentido próprio (cada tarefa é um article) -->
+                    <p>Ler capítulo de Direito Civil</p>
+                    <!-- p = parágrafo; aqui usado para exibir o nome da tarefa -->
+                    <label>Status:</label>
+                    <!-- label = rótulo descritivo do campo (sem for= pois está próximo do select) -->
+                    <select>
+                        <!-- select = lista suspensa (dropdown) de opções -->
+                        <option>Não iniciado</option>
+                        <!-- option = cada item da lista suspensa -->
+                        <option>Em andamento</option>
+                        <option>Concluído</option>
+                    </select>
+                </article>
+
+                <article>
+                    <p>Trabalho de Penal</p>
+                    <label>Status:</label>
+                    <select>
+                        <option>Não iniciado</option>
+                        <option>Em andamento</option>
+                        <option>Concluído</option>
+                    </select>
+                </article>
+
+                <article>
+                    <p>Revisar anotações</p>
+                    <label>Status:</label>
+                    <select>
+                        <option>Não iniciado</option>
+                        <option>Em andamento</option>
+                        <option>Concluído</option>
+                    </select>
+                </article>
+
+            </fieldset>
+
+            <br><br>
+            <!-- br cria quebra de linha; dois br = linha em branco de separação visual -->
+
+            <!-- ==================== FIELDSET 2: DISCIPLINA ==================== -->
+            <fieldset>
+                <legend>DISCIPLINA</legend>
+
+                <article>
+                    <p>Direito Civil</p>
+                    <label>Concluido:</label>
+                    <select>
+                        <!-- opções de porcentagem para indicar progresso da disciplina -->
+                        <option>0%</option>
+                        <option>25%</option>
+                        <option>50%</option>
+                        <option>75%</option>
+                        <option>100%</option>
+                    </select>
+                </article>
+
+                <article>
+                    <p>Direito Penal</p>
+                    <label>Concluido:</label>
+                    <select>
+                        <option>0%</option>
+                        <option>25%</option>
+                        <option>50%</option>
+                        <option>75%</option>
+                        <option>100%</option>
+                    </select>
+                </article>
+
+                <article>
+                    <p>Constitucional</p>
+                    <label>Concluido:</label>
+                    <select>
+                        <option>0%</option>
+                        <option>25%</option>
+                        <option>50%</option>
+                        <option>75%</option>
+                        <option>100%</option>
+                    </select>
+                </article>
+
+            </fieldset>
+
+            <br><br>
+
+            <!-- BOTÕES DE AÇÃO DO FORMULÁRIO -->
+            <button type="submit">Enviar</button>
+            <!-- type="submit" envia os dados do formulário -->
+
+            <button type="reset">Limpar</button>
+            <!-- type="reset" apaga todos os selects de volta ao primeiro option -->
+
+        </form>
+
+    </main>
+
+    <footer class="rodapeDash">
+        <!-- footer = rodapé semântico da página
+             class="rodapeDash" permite estilizar este footer de forma específica se necessário -->
+        <p>© 2026 - Sistema de Estudos</p>
+    </footer>
+
+</body>
+</html>

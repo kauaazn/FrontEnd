@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <!-- Folha de estilos externa da página de login -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Card central que agrupa todo o conteúdo de login -->
+    <div class="login-card">
+
+        <!-- Título da página -->
+        <h1>LOGIN</h1>
+
+        <!-- Subtítulo abaixo do título -->
+        <p class="subtitle">Acesse sua conta</p>
+
+        <!-- Campo de usuário -->
+        <div class="field">
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" placeholder="Digite seu usuário">
+        </div>
+
+        <!-- Campo de senha, oculta os caracteres digitados -->
+        <div class="field">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="Digite sua senha">
+        </div>
+
+        <!-- Parágrafo onde o JS exibe mensagens de erro ou sucesso -->
+        <p id="mensagem"></p>
+
+        <!-- Botão que chama a função login() do script.js -->
+        <button class="btn-login" onclick="login()">Entrar</button>
+
+    </div>
+
+    <!-- Script responsável pela validação do login -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!-- Grupo: Kauã Reis, Enzo Frade, Marlon Daniel, Matheus Oliveira -->
+
+<!DOCTYPE html>
+<!-- DOCTYPE informa ao navegador que este é um documento HTML5 -->
+
+<html lang="pt-BR">
+<!-- lang define o idioma da página (pt-BR = Português do Brasil) -->
+
+<head>
+    <!-- HEAD: metadados da página (não visíveis ao usuário) -->
+
+    <meta charset="UTF-8">
+    <!-- charset UTF-8 garante suporte a acentos e caracteres especiais -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport torna a página responsiva em dispositivos móveis -->
+
+    <title>Método de Estudo Pomodoro</title>
+    <!-- title aparece na aba do navegador -->
+
+    <link rel="stylesheet" href="inicial.css">
+    <!-- conecta o arquivo de estilo CSS a este HTML -->
+</head>
+
+<body>
+    <!-- BODY: conteúdo visível da página -->
+
+    <header>
+        <!-- header é o cabeçalho semântico da página (elemento de bloco HTML5) -->
+        <h1>Sessão Pomodoro de Estudo</h1>
+        <!-- h1 = título principal, maior nível de hierarquia de texto -->
+    </header>
+
+    <nav>
+        <!-- nav é o elemento semântico de navegação (barra de links) -->
+        <ul>
+            <!-- ul = unordered list (lista sem numeração); aqui usada como container dos links de nav -->
+            <a href="index.html">Login</a>
+            <!-- a é a tag de link (anchor)
+                 href="index.html" define a página de destino ao clicar -->
+            <a href="inicial.html">Início</a>
+            <a href="dashboard.html">Dashboard</a>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- main é o conteúdo principal único da página (só deve haver um por documento) -->
+
+        <section>
+            <!-- section agrupa conteúdo relacionado com sentido próprio dentro do main -->
+
+            <h2>Registrar Sessão de Estudo (Pomodoro)</h2>
+            <!-- h2 é o segundo nível de hierarquia de título (subtítulo da seção) -->
+
+            <form>
+                <!-- form cria um formulário (sem action/method os dados não são enviados) -->
+
+                <div>
+                    <!-- div é um container genérico sem significado semântico (usado para agrupar e estilizar) -->
+                    <label for="materia">Matéria/Assunto:</label>
+                    <!-- label vincula ao input pelo atributo for (deve ser igual ao id do input) -->
+                    <input type="text" id="materia" name="materia" required>
+                    <!-- required torna o campo obrigatório antes de submeter o formulário -->
+                </div><br><br>
+
+                <div>
+                    <label for="data">Data da Sessão:</label>
+                    <input type="date" id="data" name="data" required>
+                    <!-- type="date" exibe um seletor de data no navegador -->
+                </div><br><br>
+
+                <div>
+                    <label for="duracao">Duração (minutos):</label>
+                    <input type="number" id="duracao" name="duracao" min="1" required>
+                    <!-- type="number" aceita apenas números
+                         min="1" impede valores menores que 1 -->
+                </div><br><br>
+
+                <div>
+                    <label for="ciclos">Quantidade de Pomodoros:</label>
+                    <input type="number" id="ciclos" name="ciclos" min="1" required>
+                </div><br><br>
+
+                <div>
+                    <label for="observacoes">Observações:</label>
+                    <input type="text" id="observacoes" name="observacoes">
+                    <!-- sem required = campo opcional -->
+                </div><br><br>
+
+                <div>
+                    <button type="submit">Registrar Sessão</button>
+                    <!-- type="submit" envia o formulário -->
+                    <button type="reset">Limpar</button>
+                    <!-- type="reset" limpa todos os campos -->
+                </div><br><br>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <!-- footer é o rodapé semântico da página -->
+        <p>Método de Estudo Pomodoro para estudantes</p>
+        <!-- p é a tag de parágrafo, usada para blocos de texto -->
+        <p>Desenvolvido para controle de estudos</p>
+    </footer>
+
+</body>
+</html>

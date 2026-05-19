@@ -1,0 +1,327 @@
+/* Variáveis CSS globais usadas em todo o projeto para cores, sombras e temas. */
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --border: #d8e0eb;
+  --text: #2b3a4a;
+  --primary: #2d6cdf;
+  --secondary: #30a2b7;
+  --accent: #f5a623;
+  --shadow: 0 18px 40px rgba(43, 64, 95, 0.08);
+}
+
+/* Define o comportamento da caixa para todos os elementos. */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilos básicos do corpo da página. */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #eef4ff 0%, #f7fbff 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* Cabeçalho fixo com logotipo, navegação e ações. */
+.cabecalho-site {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 32px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Agrupamento do nome da marca e texto secundário. */
+.marca {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Estilo do logotipo no cabeçalho. */
+.logotipo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Navegação principal do site. */
+.nav-site {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-site a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Hover nos links de navegação. */
+.nav-site a:hover {
+  color: var(--primary);
+}
+
+/* Controles do cabeçalho (contador e botão). */
+.acoes-cabecalho {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.acoes-cabecalho span {
+  font-weight: bold;
+}
+
+.acoes-cabecalho button {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* Largura máxima da área principal e espaçamento lateral. */
+main {
+  width: min(1180px, 100%);
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+/* Seção de destaque com texto e cartão promocional. */
+.destaque {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.destaque > div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
+.rotulo-destaque {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(45, 108, 223, 0.1);
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.destaque h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.destaque p {
+  margin: 0;
+  line-height: 1.7;
+  color: #4a5f76;
+}
+
+/* Cartão colorido de promoção dentro da área de destaque. */
+.cartao-destaque {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #2d6cdf 0%, #30a2b7 100%);
+  color: white;
+  border-radius: 20px;
+}
+
+.cartao-destaque h2 {
+  margin: 0 0 10px;
+}
+
+/* Título da seção de cursos. */
+.secao-cursos h2 {
+  margin: 0 0 20px;
+  font-size: 1.8rem;
+}
+
+/* Grade que organiza os cards de curso. */
+.grade-cursos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Estilo base para cada cartão de curso. */
+.cartao-curso {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.cartao-curso img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  min-height: 180px;
+}
+
+/* Estilo específico para o card de produtividade com imagem de fundo branco. */
+.cartao-curso.cartao-produtividade img {
+  object-fit: contain;
+  background: #f4f7fb;
+}
+
+.corpo-cartao-curso {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px;
+}
+
+.cartao-curso h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.instrutor {
+  margin: 0;
+  color: #5b6a7d;
+  font-size: 0.96rem;
+}
+
+.meta-curso {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #6b7b8f;
+  font-size: 0.95rem;
+}
+
+.preco {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Classe aplicada quando o desconto está ativo para mudar a cor do preço. */
+.preco.com-desconto {
+  color: var(--accent);
+}
+
+/* Botão para adicionar curso ao carrinho. */
+.botao-carrinho {
+  width: 100%;
+  margin-top: auto;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Estilo do botão após o curso ser adicionado. */
+.botao-carrinho.adicionado {
+  background: #4a505e;
+}
+
+/* Seção de informações extras: sobre e contato. */
+.secao-info {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.secao-info article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+
+.secao-info h2 {
+  margin-top: 0;
+}
+
+.rodape-site {
+  padding: 22px 24px;
+  text-align: center;
+  color: #5b6a7d;
+  font-size: 0.95rem;
+}
+
+/* Caixa de retorno para mensagens temporárias ao usuário. */
+.retorno {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 280px;
+  max-width: 90%;
+  background: rgba(45, 108, 223, 0.95);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+/* Quando a classe show é adicionada, a mensagem aparece. */
+.retorno.show {
+  opacity: 1;
+}
+
+/* Ajustes para telas médias. */
+@media (max-width: 900px) {
+  .destaque {
+    flex-direction: column;
+  }
+
+  .grade-cursos {
+    grid-template-columns: 1fr;
+  }
+
+  .secao-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ajustes para telas menores, como celular. */
+@media (max-width: 640px) {
+  .cabecalho-site {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-site {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .acoes-cabecalho {
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,162 @@
+/* =============================================
+   inicial.css — Estilos da página Início (Registrar Sessão Pomodoro)
+   ============================================= */
+
+/* --- BODY: configurações gerais da página --- */
+body {
+    background-color: #f5f5f5; /* fundo cinza claro para toda a página */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;   /* cinza escuro — mais suave que preto puro */
+    margin: 0;     /* remove margens padrão do navegador */
+    padding: 0;
+    display: flex;          /* Flexbox no body para empilhar header, nav, main e footer */
+    flex-direction: column; /* empilha os filhos na vertical */
+    min-height: 100vh;      /* body sempre ocupa 100% da altura da janela (viewport height) */
+}
+
+/* --- HEADER: cabeçalho azul no topo --- */
+header {
+    background-color: #1896da; /* azul principal do projeto */
+    text-align: center;
+    padding: 20px 0 15px 0;    /* padding: cima direita baixo esquerda */
+}
+
+/* --- HEADER H1: título dentro do cabeçalho --- */
+header h1 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px; /* esta linha é sobrescrita pela linha abaixo */
+    margin-top: 0;       /* esta linha é sobrescrita pela linha abaixo */
+    margin: 0;           /* zera todas as margens do h1 (sobrescreve margin-top e margin-bottom acima) */
+    line-height: 1.2;    /* altura da linha = 1.2x o tamanho da fonte (espaço entre linhas) */
+}
+
+/* --- NAV: barra de navegação --- */
+nav {
+    background-color: #1270a8; /* azul mais escuro que o header */
+    padding: 10px;
+    text-align: center;
+}
+
+/* --- NAV UL: lista de links de navegação --- */
+nav ul {
+    list-style: none; /* remove os marcadores (bolinhas/números) padrão da lista */
+    margin: 0;
+    padding: 0;
+    display: flex;             /* Flexbox para colocar os links lado a lado */
+    justify-content: center;   /* centraliza os links no eixo horizontal */
+    align-items: center;       /* centraliza os links no eixo vertical */
+    gap: 10px;                 /* espaço de 10px entre cada link */
+}
+
+/* --- NAV A: links da barra de navegação --- */
+nav a {
+    color: white;
+    text-decoration: none; /* remove o sublinhado padrão dos links */
+    padding: 5px 15px;     /* espaçamento interno: 5px vertical, 15px horizontal */
+    font-size: 15px;
+}
+
+/* --- MAIN: área de conteúdo principal --- */
+main {
+    max-width: 800px; /* não passa de 800px mesmo em telas grandes */
+    width: 95%;       /* 95% da tela em dispositivos menores */
+    margin: 40px auto; /* 40px de margem vertical + centralização horizontal */
+    flex: 1;           /* ocupa todo o espaço disponível (empurra o footer para baixo) */
+}
+
+/* --- SECTION: card branco que envolve o formulário --- */
+section {
+    background-color: white;
+    border: 1px solid #ddd;  /* borda cinza clara */
+    border-radius: 10px;     /* cantos arredondados */
+    padding: 40px;           /* espaçamento interno generoso */
+}
+
+/* --- SECTION H2: subtítulo do formulário --- */
+section h2 {
+    color: #1896da;
+    text-align: center;
+    margin-bottom: 30px; /* espaço entre o título e o primeiro campo */
+    font-size: 22px;
+}
+
+/* --- FORM DIV: container de cada campo (label + input) --- */
+form div {
+    margin-bottom: 20px; /* espaço entre os campos */
+}
+
+/* --- FORM LABEL: rótulo de cada campo (estilo específico dentro do form) --- */
+form label {
+    margin: 0 0 10px 0; /* apenas margem inferior de 10px */
+    font-weight: bold;
+    color: #1270a8;     /* azul escuro */
+    font-size: 16px;
+}
+
+/* --- LABEL geral: estilo base para todos os labels --- */
+label {
+    display: block;      /* ocupa a linha inteira (label acima do input) */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* --- INPUT: campos de texto/data/número --- */
+input {
+    width: 100%;        /* ocupa toda a largura do container */
+    padding: 12px;      /* espaçamento interno para o campo ser mais fácil de clicar/digitar */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box; /* padding incluído no cálculo da largura (não ultrapassa 100%) */
+}
+
+/* --- FORM DIV:LAST-CHILD: último div do form (contém os botões) --- */
+form div:last-child {
+    display: flex;     /* coloca os botões lado a lado */
+    gap: 15px;         /* espaço entre os botões */
+    margin-top: 10px;
+}
+
+/* --- BUTTON: estilo base dos botões --- */
+button {
+    padding: 12px 30px; /* 12px vertical, 30px horizontal */
+    font-size: 16px;
+    cursor: pointer;    /* cursor de mão ao passar o mouse */
+    border: 1px solid #1896da;
+    border-radius: 8px;
+}
+
+/* --- BUTTON[type="submit"]: botão Registrar Sessão --- */
+button[type="submit"] {
+    background-color: #1896da; /* azul — botão de ação principal */
+    color: white;
+}
+
+/* --- FOOTER: rodapé da página --- */
+footer {
+    width: 100%;
+    background-color: #333; /* fundo escuro para contraste */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- MEDIA QUERY: telas com até 600px de largura (celulares) --- */
+@media (max-width: 600px) {
+    /* @media permite aplicar estilos apenas quando a condição é verdadeira */
+
+    nav ul {
+        flex-direction: column; /* links empilhados verticalmente no celular */
+    }
+
+    form div:last-child {
+        flex-direction: column; /* botões empilhados no celular */
+    }
+
+    button {
+        width: 100%; /* botão ocupa a tela toda (mais fácil de tocar no celular) */
+    }
+}

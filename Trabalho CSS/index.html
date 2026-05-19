@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- DOCTYPE informa ao navegador que este é um documento HTML5 -->
+
+<html lang="pt-br">
+<!-- lang="pt-br" define o idioma da página como Português do Brasil (ajuda leitores de tela e SEO) -->
+
+<head>
+    <!-- HEAD contém metadados (informações sobre a página que não aparecem visualmente) -->
+
+    <meta charset="UTF-8">
+    <!-- charset="UTF-8" define a codificação de caracteres, permitindo acentos e caracteres especiais -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport garante que a página seja responsiva em celulares:
+         width=device-width  → largura igual à tela do dispositivo
+         initial-scale=1.0   → sem zoom inicial -->
+
+    <title>LOGIN</title>
+    <!-- title define o texto que aparece na aba do navegador -->
+
+    <link rel="stylesheet" href="index.css">
+    <!-- link conecta este HTML ao arquivo CSS externo (index.css) para aplicar os estilos -->
+</head>
+
+<body>
+    <!-- BODY contém todo o conteúdo visível da página -->
+
+    <h1 class="login">LOGIN</h1>
+    <!-- h1 é o título principal da página (maior nível de hierarquia)
+         class="login" permite estilizar especificamente este h1 via CSS -->
+
+    <main style="text-align: center;">
+        <!-- main é a área de conteúdo principal da página
+             style inline centraliza o texto do formulário -->
+
+        <form action="dashboard.html" method="get">
+            <!-- form cria um formulário HTML
+                 action="dashboard.html" define para onde os dados serão enviados ao clicar em Entrar
+                 method="get" envia os dados pela URL (ex: dashboard.html?nome=João&email=...) -->
+
+            <label for="nome">Digite seu nome: </label>
+            <!-- label é o rótulo/texto descritivo do campo
+                 for="nome" conecta este label ao input com id="nome" (clicando no label foca o input) -->
+
+            <input placeholder="Nome" type="text" name="nome" id="nome" required>
+            <!-- input cria um campo de entrada de dados
+                 placeholder="Nome"  → texto cinza exibido quando o campo está vazio
+                 type="text"         → aceita qualquer texto
+                 name="nome"         → nome do dado enviado no formulário
+                 id="nome"           → identificador único, vinculado ao label for="nome"
+                 required            → campo obrigatório, o form não envia se estiver vazio -->
+            <br><br>
+            <!-- br cria uma quebra de linha (dois br = linha em branco entre os campos) -->
+
+            <label for="email">Digite seu E-mail: </label>
+            <input placeholder="E-mail" type="email" name="email" id="email" required>
+            <!-- type="email" valida automaticamente se o texto tem formato de e-mail (contém @) -->
+            <br><br>
+
+            <label for="password">Senha: </label>
+            <input placeholder="Senha" type="password" name="senha" id="senha" required>
+            <!-- type="password" esconde os caracteres digitados (exibe bolinhas) -->
+            <br><br>
+
+            <label for="idade">Digite sua idade: </label>
+            <input placeholder="0" type="number" name="idade" id="idade" required>
+            <!-- type="number" aceita apenas números e exibe setas para incrementar/decrementar -->
+            <br><br>
+
+            <label for="genero">Gênero</label>
+            <select name="genero" id="genero">
+                <!-- select cria uma lista suspensa (dropdown) de opções -->
+
+                <option value="M">Masculino</option>
+                <!-- option é cada item da lista
+                     value="M" é o valor enviado no formulário (o texto "Masculino" é apenas exibição) -->
+
+                <option value="F">Feminino</option>
+                <option value="O">Outro</option>
+            </select>
+            <br><br>
+
+            <button type="submit">Entrar</button>
+            <!-- button type="submit" envia o formulário para o action definido no form -->
+
+            <button type="reset">Limpar</button>
+            <!-- button type="reset" apaga todos os dados preenchidos no formulário -->
+
+        </form>
+    </main>
+
+</body>
+
+</html>
