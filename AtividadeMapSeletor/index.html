@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma de Estudos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Cabeçalho fixo com logo, navegação e ações rápidas -->
+  <header class="cabecalho-site">
+    <div class="marca">
+      <span class="logotipo">Estudo+</span>
+      <p>Plataforma de Cursos</p>
+    </div>
+
+    <!-- Links de navegação para as seções da página -->
+    <nav class="nav-site">
+      <a href="#cursos">Cursos</a>
+      <a href="#carrinho">Carrinho</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- Contador de itens no carrinho e botão de desconto -->
+    <div class="acoes-cabecalho">
+      <span id="contadorCarrinho">Carrinho: 0</span>
+      <button id="botaoDesconto" type="button">Ativar desconto</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Seção de destaque com chamada principal e card de promoção -->
+    <section class="destaque">
+      <div>
+        <span class="rotulo-destaque">Nova coleção</span>
+        <!-- id="titulo-plataforma" permite selecionar e alterar o título via JS (Etapa 2) -->
+        <h1 id="titulo-plataforma">Descubra cursos práticos e completos</h1>
+        <p>Aprenda novas habilidades com uma página organizada, responsiva e fácil de usar.</p>
+      </div>
+      <div class="cartao-destaque">
+        <h2>Economize mais</h2>
+        <p>Ao ativar o desconto, todos os cursos recebem 20% de redução no preço.</p>
+      </div>
+    </section>
+
+    <!-- Grade de cartões de cursos disponíveis -->
+    <section id="cursos" class="secao-cursos">
+      <h2>Cursos em destaque</h2>
+
+      <!-- Etapa 1: campo de busca e filtro por categoria (Etapa 4 filtra via JS) -->
+      <div class="secao-busca">
+        <input
+          id="busca-aula"
+          class="campo-busca"
+          type="text"
+          placeholder="Buscar aula..."
+        >
+        <select id="filtro-categoria" class="filtro-categoria">
+          <option value="todos">Todos</option>
+          <option value="frontend">Front-end</option>
+          <option value="design">Design</option>
+          <option value="produtividade">Produtividade</option>
+        </select>
+      </div>
+
+      <div class="grade-cursos">
+
+        <!-- Cartão: JavaScript Moderno | data-preco usado pelo JS para calcular desconto -->
+        <!-- card-curso e data-categoria permitem seleção e filtragem via JS (Etapas 2 e 4) -->
+        <article class="cartao-curso card-curso" data-preco="129" data-categoria="frontend">
+          <img src="imgjs.jpg" alt="Curso de JavaScript">
+          <div class="corpo-cartao-curso">
+            <h3>JavaScript Moderno</h3>
+            <p class="instrutor">Por Ana Souza</p>
+            <div class="meta-curso">
+              <span>★ 4.8</span>
+              <span>32h</span>
+            </div>
+            <p class="preco">R$ 129,00</p>
+            <!-- data-curso deve corresponder exatamente ao campo "titulo" no catálogo do script.js -->
+            <!-- btn-iniciar permite selecionar os botões de ação via JS (Etapa 2) -->
+            <button type="button" class="botao-carrinho btn-iniciar" data-curso="JavaScript Moderno">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <!-- Cartão: CSS Avançado -->
+        <article class="cartao-curso card-curso" data-preco="99" data-categoria="frontend">
+          <img src="imgcss.jpg" alt="Curso de CSS Avançado">
+          <div class="corpo-cartao-curso">
+            <h3>CSS Avançado</h3>
+            <p class="instrutor">Por Bruno Lima</p>
+            <div class="meta-curso">
+              <span>★ 4.7</span>
+              <span>24h</span>
+            </div>
+            <p class="preco">R$ 99,00</p>
+            <button type="button" class="botao-carrinho btn-iniciar" data-curso="CSS Avançado">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <!-- Cartão: Design de Interfaces -->
+        <article class="cartao-curso card-curso" data-preco="149" data-categoria="design">
+          <img src="imgdesign.png" alt="Curso de Design de Interface">
+          <div class="corpo-cartao-curso">
+            <h3>Design de Interfaces</h3>
+            <p class="instrutor">Por Carla Mendes</p>
+            <div class="meta-curso">
+              <span>★ 4.9</span>
+              <span>28h</span>
+            </div>
+            <p class="preco">R$ 149,00</p>
+            <button type="button" class="botao-carrinho btn-iniciar" data-curso="Design de Interfaces">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <!-- Cartão: Produtividade Pessoal | cartao-produtividade ajusta object-fit da imagem via CSS -->
+        <article class="cartao-curso cartao-produtividade card-curso" data-preco="79" data-categoria="produtividade">
+          <img src="imgprodutividade.jfif" alt="Curso de Produtividade">
+          <div class="corpo-cartao-curso">
+            <h3>Produtividade Pessoal</h3>
+            <p class="instrutor">Por Diego Ferreira</p>
+            <div class="meta-curso">
+              <span>★ 4.6</span>
+              <span>18h</span>
+            </div>
+            <p class="preco">R$ 79,00</p>
+            <button type="button" class="botao-carrinho btn-iniciar" data-curso="Produtividade Pessoal">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Etapa 4: progresso atualizado via JS a cada curso iniciado -->
+      <div class="secao-progresso">
+        <h3>Meu progresso</h3>
+        <p>Cursos iniciados: <span id="aulas-concluidas">0</span> de <span id="total-aulas">4</span></p>
+        <div class="barra-progresso-container">
+          <div id="barra-progresso" class="barra-progresso-fill"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Seção do carrinho: lista populada dinamicamente pelo script.js -->
+    <section id="carrinho" class="secao-carrinho">
+      <div class="cabecalho-carrinho">
+        <h2>🛒 Meu Carrinho</h2>
+        <button id="btnLimpar" type="button" class="btn-limpar">Limpar carrinho</button>
+      </div>
+
+      <!-- Lista de itens do carrinho (renderizada via JS com .map()) -->
+      <ul id="listaCarrinho" class="lista-carrinho">
+        <!-- Itens inseridos dinamicamente -->
+      </ul>
+
+      <!-- Total calculado via .reduce() no script.js -->
+      <p id="totalCarrinho" class="total-carrinho">Total: R$ 0,00</p>
+    </section>
+
+    <!-- Seções institucionais: sobre e contato -->
+    <section id="sobre" class="secao-info">
+      <article>
+        <h2>Por que estudar aqui?</h2>
+        <p>Esta vitrine oferece cursos organizados por temas, com informações claras e um visual simples para usar no desktop e no celular.</p>
+      </article>
+      <article id="contato">
+        <h2>Contato</h2>
+        <p>Envie suas dúvidas e comece a aprender com um carrinho que faz a contagem de cursos adicionados.</p>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="rodape-site">
+    <p>© 2026 Plataforma de Estudos. Aprenda com quem entende.</p>
+  </footer>
+
+  <!-- Notificação flutuante exibida temporariamente pelo mostrarRetorno() -->
+  <div id="retorno" class="retorno" aria-live="polite"></div>
+
+  <!-- Script carregado no fim do body para garantir que o DOM já existe -->
+  <script src="script.js"></script>
+</body>
+</html>

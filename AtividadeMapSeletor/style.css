@@ -1,0 +1,583 @@
+/* =============================================
+   VARIÁVEIS GLOBAIS
+   Paleta de cores e sombra reutilizadas em todo o projeto
+   ============================================= */
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --border: #d8e0eb;
+  --text: #2b3a4a;
+  --primary: #2d6cdf;
+  --secondary: #30a2b7;
+  --accent: #f5a623;      /* Usado no preço com desconto ativo */
+  --shadow: 0 18px 40px rgba(43, 64, 95, 0.08);
+}
+
+/* Reset de box-sizing para todos os elementos */
+* {
+  box-sizing: border-box;
+}
+
+/* =============================================
+   BASE
+   ============================================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #eef4ff 0%, #f7fbff 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* =============================================
+   CABEÇALHO
+   Fixo no topo com z-index para ficar acima do conteúdo ao rolar
+   ============================================= */
+.cabecalho-site {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 32px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.marca {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logotipo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Links de navegação do cabeçalho */
+.nav-site {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-site a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-site a:hover {
+  color: var(--primary);
+}
+
+/* Área com contador do carrinho e botão de desconto */
+.acoes-cabecalho {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.acoes-cabecalho span {
+  font-weight: bold;
+}
+
+.acoes-cabecalho button {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 999px; /* Formato pill */
+  cursor: pointer;
+}
+
+/* =============================================
+   LAYOUT PRINCIPAL
+   Largura máxima centralizada com padding lateral
+   ============================================= */
+main {
+  width: min(1180px, 100%);
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+/* =============================================
+   SEÇÃO DESTAQUE
+   Dois painéis lado a lado: texto principal + card de promoção
+   ============================================= */
+.destaque {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.destaque > div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
+/* Rótulo "Nova coleção" em formato de tag arredondada */
+.rotulo-destaque {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(45, 108, 223, 0.1);
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* clamp() garante título responsivo entre 2rem e 3.2rem */
+.destaque h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.destaque p {
+  margin: 0;
+  line-height: 1.7;
+  color: #4a5f76;
+}
+
+/* Card de promoção com gradiente azul */
+.cartao-destaque {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #2d6cdf 0%, #30a2b7 100%);
+  color: white;
+  border-radius: 20px;
+}
+
+.cartao-destaque h2 {
+  margin: 0 0 10px;
+}
+
+/* =============================================
+   GRADE DE CURSOS
+   Grid de 2 colunas com cartões de curso
+   ============================================= */
+.secao-cursos h2 {
+  margin: 0 0 20px;
+  font-size: 1.8rem;
+}
+
+.grade-cursos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Cartão individual de curso */
+.cartao-curso {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden; /* Garante que a imagem respeite o border-radius */
+  box-shadow: var(--shadow);
+}
+
+/* Imagem do curso em proporção 16:9 */
+.cartao-curso img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  min-height: 180px;
+}
+
+/* Exceção para o curso de produtividade cuja imagem não preenche bem com cover */
+.cartao-curso.cartao-produtividade img {
+  object-fit: contain;
+  background: #f4f7fb;
+}
+
+.corpo-cartao-curso {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px;
+}
+
+.cartao-curso h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.instrutor {
+  margin: 0;
+  color: #5b6a7d;
+  font-size: 0.96rem;
+}
+
+/* Linha com avaliação e duração do curso */
+.meta-curso {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #6b7b8f;
+  font-size: 0.95rem;
+}
+
+.preco {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Aplicado via JS quando o desconto está ativo */
+.preco.com-desconto {
+  color: var(--accent);
+}
+
+/* Botão que ocupa toda a largura do cartão */
+.botao-carrinho {
+  width: 100%;
+  margin-top: auto;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Estado visual após o curso ser adicionado ao carrinho */
+.botao-carrinho.adicionado {
+  background: #4a505e;
+}
+
+/* =============================================
+   SEÇÃO CARRINHO
+   ============================================= */
+.secao-carrinho {
+  margin-top: 40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: var(--shadow);
+}
+
+.cabecalho-carrinho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cabecalho-carrinho h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+/* Botão "Limpar carrinho" com estilo destrutivo */
+.btn-limpar {
+  padding: 8px 16px;
+  border: 1px solid #e05252;
+  border-radius: 999px;
+  background: transparent;
+  color: #e05252;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-limpar:hover {
+  background: #e05252;
+  color: white;
+}
+
+/* Lista de itens sem marcadores padrão do <ul> */
+.lista-carrinho {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Mensagem exibida quando o array carrinho está vazio */
+.carrinho-vazio {
+  text-align: center;
+  color: #8a9bb0;
+  font-style: italic;
+  padding: 20px 0;
+}
+
+/* Item individual do carrinho */
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #f8fafd;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-instrutor {
+  font-size: 0.88rem;
+  color: #7a8fa6;
+}
+
+/* Área com preço e botão de remover */
+.item-acoes {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.item-preco {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+
+/* Botão circular de remover item */
+.btn-remover {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: #e8ecf2;
+  color: #5b6a7d;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-remover:hover {
+  background: #e05252;
+  color: white;
+}
+
+/* Total do carrinho alinhado à direita com separador superior */
+.total-carrinho {
+  margin: 20px 0 0;
+  padding-top: 16px;
+  border-top: 2px solid var(--border);
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+/* =============================================
+   SEÇÕES INSTITUCIONAIS (Sobre / Contato)
+   Grid de 2 colunas com artigos
+   ============================================= */
+.secao-info {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.secao-info article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+
+.secao-info h2 {
+  margin-top: 0;
+}
+
+/* =============================================
+   RODAPÉ
+   ============================================= */
+.rodape-site {
+  padding: 22px 24px;
+  text-align: center;
+  color: #5b6a7d;
+  font-size: 0.95rem;
+}
+
+/* =============================================
+   NOTIFICAÇÃO FLUTUANTE (retorno)
+   Aparece na base da tela; exibida via classe .show adicionada pelo JS
+   ============================================= */
+.retorno {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  min-width: 280px;
+  max-width: 90%;
+  background: rgba(45, 108, 223, 0.95);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-align: center;
+  opacity: 0;            /* Invisível por padrão */
+  pointer-events: none;  /* Não interfere em cliques quando oculto */
+  transition: opacity 0.2s ease;
+}
+
+.retorno.show {
+  opacity: 1;
+}
+
+/* =============================================
+   BUSCA E FILTRO (Etapa 1 / Etapa 4)
+   ============================================= */
+.secao-busca {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.campo-busca {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.campo-busca:focus {
+  border-color: var(--primary);
+}
+
+.filtro-categoria {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: white;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.filtro-categoria:focus {
+  border-color: var(--primary);
+}
+
+/* =============================================
+   DESTAQUE E INTERATIVIDADE NOS CARDS
+   Classes adicionadas via JS (Desafio 1)
+   ============================================= */
+
+/* Aplicado ao primeiro card (cards[0].classList.add("destaque")) */
+.cartao-curso.destaque {
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 0 4px rgba(45, 108, 223, 0.12), var(--shadow);
+}
+
+/* Aplicado a todos os cards (cards.forEach → classList.add("card-interativo")) */
+.cartao-curso.card-interativo {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cartao-curso.card-interativo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 52px rgba(43, 64, 95, 0.14);
+}
+
+/* =============================================
+   PROGRESSO DA PLATAFORMA (Etapa 4)
+   ============================================= */
+.secao-progresso {
+  margin-top: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: var(--shadow);
+}
+
+.secao-progresso h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.secao-progresso p {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: #5b6a7d;
+}
+
+/* Container cinza de fundo da barra */
+.barra-progresso-container {
+  height: 10px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* Barra interna: largura controlada via barra.style.width no JS */
+.barra-progresso-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--primary);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+/* =============================================
+   RESPONSIVIDADE
+   ============================================= */
+
+/* Tablet: empilha destaque e grade de cursos em coluna única */
+@media (max-width: 900px) {
+  .destaque {
+    flex-direction: column;
+  }
+
+  .grade-cursos {
+    grid-template-columns: 1fr;
+  }
+
+  .secao-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile: empilha o cabeçalho e centraliza a navegação */
+@media (max-width: 640px) {
+  .cabecalho-site {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-site {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .acoes-cabecalho {
+    justify-content: space-between;
+  }
+}
